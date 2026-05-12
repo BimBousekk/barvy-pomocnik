@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="/manifest.json">
+  <title>Barvy & Text</title>
+</head>
+<body data-mode="color" data-frozen="false">
+<div id="app">
+  <div class="header">
+    <div class="tabs">
+      <button class="tab active" data-mode="color">Barva</button>
+      <button class="tab" data-mode="text">Text</button>
+    </div>
+  </div>
+
+  <div class="camera-wrap">
+    <video id="video" autoplay playsinline muted></video>
+    <canvas id="canvas"></canvas>
+    <div class="crosshair"><div class="ring"></div></div>
+
+    <div id="colorInfo" class="color-info">
+      <div id="swatch" class="swatch"></div>
+      <div class="ctext">
+        <div id="colorName" class="cname">—</div>
+        <div id="colorDetail" class="cdetail">Namiř kameru na barvu</div>
+      </div>
+    </div>
+
+    <div id="textResult" class="text-result">
+      <h3>Rozpoznaný text</h3>
+      <div id="textContent" class="content">—</div>
+      <div class="actions">
+        <button class="btn" id="copyBtn">Kopírovat</button>
+        <button class="btn" id="translateBtn">Přeložit</button>
+        <button class="btn" id="closeBtn">Zavřít</button>
+      </div>
+    </div>
+
+    <div id="warnBanner" class="warn-banner">
+      <span class="icon">⚠</span>
+      <span id="warnMsg" class="msg">Špatné osvětlení</span>
+    </div>
+
+    <div id="status" class="status"></div>
+    <div id="error" class="error"></div>
+  </div>
+
+  <div class="controls">
+    <button id="freezeBtn" class="btn">Zmrazit</button>
+    <button id="actionBtn" class="btn primary">Skenovat text</button>
+  </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
