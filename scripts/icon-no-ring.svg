@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Variant B: bez žlutého rámečku -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#1a1a1d"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="iris" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#FFE34D"/>
+      <stop offset="100%" stop-color="#FFD60A"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="228" ry="228" fill="url(#bg)"/>
+
+  <path d="M 162 512
+           C 200 380, 340 322, 512 322
+           C 684 322, 824 380, 862 512
+           C 824 644, 684 702, 512 702
+           C 340 702, 200 644, 162 512 Z"
+        fill="#ffffff"/>
+
+  <circle cx="512" cy="512" r="137" fill="url(#iris)"/>
+  <circle cx="512" cy="512" r="44" fill="#000000"/>
+  <circle cx="528" cy="496" r="11" fill="#ffffff"/>
+</svg>

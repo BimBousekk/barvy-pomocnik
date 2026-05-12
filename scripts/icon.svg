@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Variant A: s žlutým rámečkem kolem oka -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#1a1a1d"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="iris" cx="50%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#FFE34D"/>
+      <stop offset="100%" stop-color="#FFD60A"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="1024" height="1024" rx="228" ry="228" fill="url(#bg)"/>
+
+  <!-- Eye shape (almond): width 700, height 380, centered.
+       Sharp corners at (162,512) and (862,512). -->
+  <path d="M 162 512
+           C 200 380, 340 322, 512 322
+           C 684 322, 824 380, 862 512
+           C 824 644, 684 702, 512 702
+           C 340 702, 200 644, 162 512 Z"
+        fill="#ffffff"
+        stroke="#FFD60A" stroke-width="24" stroke-linejoin="miter" stroke-miterlimit="6"/>
+
+  <!-- Iris: yellow circle, radius 137 (~72% of eye height) -->
+  <circle cx="512" cy="512" r="137" fill="url(#iris)"/>
+
+  <!-- Pupil: black circle, ~32% of iris diameter (radius 44) -->
+  <circle cx="512" cy="512" r="44" fill="#000000"/>
+
+  <!-- Catchlight: small white dot, top-right of pupil -->
+  <circle cx="528" cy="496" r="11" fill="#ffffff"/>
+</svg>

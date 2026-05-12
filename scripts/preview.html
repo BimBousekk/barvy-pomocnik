@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Náhled vygenerovaných PWA ikon</title>
+<style>
+  body {
+    margin: 0; padding: 40px; background: #2a2a2e;
+    font-family: -apple-system, system-ui, sans-serif; color: #fff;
+    display: flex; flex-direction: column; align-items: center; gap: 32px;
+  }
+  h1 { font-weight: 600; font-size: 22px; }
+  .grid { display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; align-items: flex-end; }
+  .card { text-align: center; }
+  .card h2 { font-size: 13px; color: #fff; margin-bottom: 4px; font-weight: 600; }
+  .card p { font-size: 11px; color: #888; margin-bottom: 10px; }
+  .card img { display: block; margin: 0 auto; }
+  .ios img { border-radius: 22.37%; } /* iOS squircle approximation */
+  .android img { border-radius: 50%; } /* Android circle mask */
+</style>
+</head>
+<body>
+  <h1>PWA ikony — finální PNG</h1>
+
+  <div class="grid">
+    <div class="card ios">
+      <h2>icon-180.png</h2>
+      <p>iOS apple-touch-icon · 180×180</p>
+      <img src="../public/icons/icon-180.png" width="180" height="180">
+    </div>
+    <div class="card ios">
+      <h2>icon-192.png</h2>
+      <p>PWA standard · 192×192</p>
+      <img src="../public/icons/icon-192.png" width="192" height="192">
+    </div>
+    <div class="card ios">
+      <h2>icon-512.png</h2>
+      <p>PWA hi-res · 512×512 (zobrazeno 200)</p>
+      <img src="../public/icons/icon-512.png" width="200" height="200">
+    </div>
+    <div class="card android">
+      <h2>icon-512-maskable.png</h2>
+      <p>Android s 10 % paddingem · oříznuto do kruhu</p>
+      <img src="../public/icons/icon-512-maskable.png" width="200" height="200">
+    </div>
+  </div>
+
+  <p style="font-size: 12px; color: #888; max-width: 600px; text-align: center;">
+    Vlevo: iOS-style squircle ořez (jak ikonu vykreslí iPhone home screen).<br>
+    Vpravo: Android kruhový mask (10% padding kolem oka zajišťuje, že se nic neořízne).
+  </p>
+</body>
+</html>
