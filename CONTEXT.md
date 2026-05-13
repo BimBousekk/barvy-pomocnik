@@ -21,12 +21,17 @@ přeložit CS↔EN. Cíl: Netlify deploy, později nativní iOS přes Capacitor.
 - `manifest.json`, iOS meta tagy v `index.html` (apple-touch-icon, status-bar)
 - Service worker přes vite-plugin-pwa: precache app (~475 KB),
   runtime cache Tesseract worker/wasm/jazyků (1 rok), MyMemory NetworkFirst (1 h)
-- Git inicializován (větev `main`), 3 commity, identita Jan + GitHub noreply
+- Git inicializován (větev `main`), 5 commitů, identita Jan + GitHub noreply
 - Repo na GitHubu: <https://github.com/BimBousekk/barvy-pomocnik> (public)
-- Aplikace ověřena v prohlížeči — kamera, barvy, OCR, detekce osvětlení fungují
+- Netlify auto-deploy z `main` propojený, live na
+  <https://ubiquitous-haupia-77c3f8.netlify.app>
+- Aplikace ověřena v produkci — kamera, barvy fungují
 
 ## Co je rozpracované
-- **Netlify auto-deploy** — propojení s GitHub repem (B.3.4 a dál).
+- **OCR ladění** — uživatel hlásil že OCR nenajde text. Sníženy confidence
+  thresholdy (word 30, line 25), fallback na raw text, dočasný debug log.
+  Čeká se na re-test po auto-deployi (commit `464dbe7`).
+- Po ověření: smazat diagnostický `console.log` v `ocr.js`.
 
 ## Otevřené otázky / rozhodnutí na později
 - Bundlovat Tesseract jazyková data jako lokální assety vs. ponechat CDN?

@@ -5,6 +5,7 @@ import { setFrozen as uiSetFrozen, showStatus, hideTextResult } from './ui.js';
 import { runOCR } from './ocr.js';
 import { translateText } from './translate.js';
 import { nameColor, toHex } from './color.js';
+import { initSelection } from './selection.js';
 
 // Keep UI and camera freeze state in sync
 function setFrozen(f) {
@@ -86,4 +87,5 @@ document.getElementById('colorInfo').addEventListener('click', () => {
 });
 
 // ===== START =====
+initSelection();
 startCamera();

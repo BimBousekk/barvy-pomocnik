@@ -36,6 +36,15 @@
     <canvas id="canvas"></canvas>
     <div class="crosshair"><div class="ring"></div></div>
 
+    <!-- Text mode: user-resizable selection rectangle for OCR target -->
+    <div id="selectBox" class="select-box">
+      <div class="handle tl" data-handle="tl"></div>
+      <div class="handle tr" data-handle="tr"></div>
+      <div class="handle bl" data-handle="bl"></div>
+      <div class="handle br" data-handle="br"></div>
+      <div class="select-hint">Posuň nebo roztáhni za rohy</div>
+    </div>
+
     <div id="colorInfo" class="color-info">
       <div id="swatch" class="swatch"></div>
       <div class="ctext">
