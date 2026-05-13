@@ -6,6 +6,7 @@ import { getSelectionVideoRect } from './selection.js';
 export async function runOCR(video, canvas) {
   showStatus('<span class="spinner"></span>Skenuji text…');
   document.getElementById('actionBtn').disabled = true;
+  document.body.dataset.scanning = 'true'; // CSS hides .select-box while true
   setFrozen(true);
 
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
@@ -18,6 +19,8 @@ export async function runOCR(video, canvas) {
   if (!sel || sel.w < 20 || sel.h < 20) {
     showStatus('Vyber větší oblast pro skenování', 2500);
     document.getElementById('actionBtn').disabled = false;
+    document.body.dataset.scanning = 'false';
+    setFrozen(false);
     return null;
   }
 
@@ -42,6 +45,7 @@ export async function runOCR(video, canvas) {
     const cleaned = cleanOcrResult(result.data);
     if (!cleaned) {
       showStatus('Nenalezen žádný text — zkus přiblížit nebo lepší světlo', 2800);
+      setFrozen(false); // let user re-aim immediately on failure
     } else {
       showTextResult(cleaned);
       hideStatus();
@@ -52,5 +56,6 @@ export async function runOCR(video, canvas) {
     return null;
   } finally {
     document.getElementById('actionBtn').disabled = false;
+    document.body.dataset.scanning = 'false';
   }
 }

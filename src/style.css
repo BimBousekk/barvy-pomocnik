@@ -92,6 +92,10 @@ body[data-mode="text"] #freezeBtn { display: none; }
 }
 body[data-mode="text"] .select-box { display: block; }
 
+/* Hide during OCR scan AND while result panel is open */
+body[data-scanning="true"] .select-box,
+.camera-wrap:has(.text-result.show) .select-box { display: none; }
+
 .select-box .handle {
   position: absolute;
   width: 22px;

@@ -28,10 +28,12 @@ přeložit CS↔EN. Cíl: Netlify deploy, později nativní iOS přes Capacitor.
 - Aplikace ověřena v produkci — kamera, barvy fungují
 
 ## Co je rozpracované
-- **OCR ladění** — uživatel hlásil že OCR nenajde text. Sníženy confidence
-  thresholdy (word 30, line 25), fallback na raw text, dočasný debug log.
-  Čeká se na re-test po auto-deployi (commit `464dbe7`).
-- Po ověření: smazat diagnostický `console.log` v `ocr.js`.
+- **OCR uživatelská oblast (drag+resize)** — místo center-70% crop si
+  uživatel kreslí obdélník kolem textu. Vyřešilo dva problémy: ořezané
+  okrajové znaky + halucinace z QR kódů. Modul `src/selection.js`,
+  pointer events, mapování přes object-fit: cover. Čeká se na re-test
+  (commit `1977038`).
+- Zmírněn preprocessing kontrast (1.4 → 1.15) kvůli zachování diakritiky.
 
 ## Otevřené otázky / rozhodnutí na později
 - Bundlovat Tesseract jazyková data jako lokální assety vs. ponechat CDN?
