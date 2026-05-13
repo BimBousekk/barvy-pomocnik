@@ -21,11 +21,12 @@ přeložit CS↔EN. Cíl: Netlify deploy, později nativní iOS přes Capacitor.
 - `manifest.json`, iOS meta tagy v `index.html` (apple-touch-icon, status-bar)
 - Service worker přes vite-plugin-pwa: precache app (~475 KB),
   runtime cache Tesseract worker/wasm/jazyků (1 rok), MyMemory NetworkFirst (1 h)
-- Git inicializován (větev `main`), 2 commity, identita Jan + GitHub noreply
+- Git inicializován (větev `main`), 3 commity, identita Jan + GitHub noreply
+- Repo na GitHubu: <https://github.com/BimBousekk/barvy-pomocnik> (public)
 - Aplikace ověřena v prohlížeči — kamera, barvy, OCR, detekce osvětlení fungují
 
 ## Co je rozpracované
-- **GitHub repo + Netlify auto-deploy** — bezprostředně další krok (KROK B).
+- **Netlify auto-deploy** — propojení s GitHub repem (B.3.4 a dál).
 
 ## Otevřené otázky / rozhodnutí na později
 - Bundlovat Tesseract jazyková data jako lokální assety vs. ponechat CDN?

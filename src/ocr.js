@@ -34,6 +34,10 @@ export async function runOCR(video, canvas) {
 
   try {
     const result = await Tesseract.recognize(ocrCanvas, 'ces+eng');
+    // Diagnostic log — remove later. Helpful when OCR returns nothing visible.
+    console.log('[OCR] raw text:', JSON.stringify(result.data.text));
+    console.log('[OCR] lines:', result.data.lines?.length, 'avg confidence:',
+      result.data.lines?.reduce((a, l) => a + (l.confidence || 0), 0) / (result.data.lines?.length || 1));
     const cleaned = cleanOcrResult(result.data);
     if (!cleaned) {
       showStatus('Nenalezen žádný text — zkus přiblížit nebo lepší světlo', 2800);

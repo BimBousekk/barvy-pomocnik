@@ -11,7 +11,14 @@ let mode = 'color';
 let lightCounter = 0;
 export let lastRGB = null;
 
-export function setFrozen(f) { frozen = f; }
+export function setFrozen(f) {
+  frozen = f;
+  // Pause/play the video element so the user can SEE the freeze.
+  if (video.srcObject) {
+    if (f) video.pause();
+    else video.play().catch(() => {});
+  }
+}
 export function setMode(m) { mode = m; }
 export function getVideo() { return video; }
 export function getCanvas() { return canvas; }

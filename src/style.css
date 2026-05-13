@@ -76,6 +76,9 @@ canvas { display: none; }
 
 body[data-mode="text"] .crosshair { display: none; }
 
+/* In text mode the primary action is "Skenovat text" — freeze is irrelevant. */
+body[data-mode="text"] #freezeBtn { display: none; }
+
 /* COLOR PANEL */
 .color-info {
   position: absolute; left: 12px; right: 12px; bottom: 12px;
